@@ -1,0 +1,11 @@
+services:
+  valkey:
+    image: valkey/valkey:8
+    container_name: tace-valkey
+    ports:
+      - "6379:6379"
+    command: ["valkey-server", "--appendonly", "yes"]
+    volumes:
+      - tace-valkey-data:/data
+volumes:
+  tace-valkey-data:
